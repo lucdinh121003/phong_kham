@@ -1,0 +1,373 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PhongKhamOnline.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PhongKhamOnline.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\assets\\demo\\chart-area-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-area-demo.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\assets\\demo\\chart-bar-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-bar-demo.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\assets\\demo\\chart-pie-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-pie-demo.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\assets\\demo\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\datatables-demo.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\assets\\img\\error-404-monochrome.svg",
+      "PackagePath": "staticwebassets\\admin\\assets\\img\\error-404-monochrome.svg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\css\\styles.css",
+      "PackagePath": "staticwebassets\\admin\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\js\\datatables-simple-demo.js",
+      "PackagePath": "staticwebassets\\admin\\js\\datatables-simple-demo.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\admin\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\admin\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\1-sach-hay-song-cham.jpg",
+      "PackagePath": "staticwebassets\\images\\1-sach-hay-song-cham.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\A_PC_2560x1440_SungJinwoo_EN.jpg",
+      "PackagePath": "staticwebassets\\images\\A_PC_2560x1440_SungJinwoo_EN.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Acer_Wallpaper_01_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\images\\Acer_Wallpaper_01_3840x2400.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Acer_Wallpaper_02_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\images\\Acer_Wallpaper_02_3840x2400.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Acer_Wallpaper_03_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\images\\Acer_Wallpaper_03_3840x2400.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Nguyễn thị kim loan Cơ xuong khop.png",
+      "PackagePath": "staticwebassets\\images\\Nguyễn thị kim loan Cơ xuong khop.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Pham thu phuong co xuong khop.png",
+      "PackagePath": "staticwebassets\\images\\Pham thu phuong co xuong khop.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\about1.png",
+      "PackagePath": "staticwebassets\\images\\about1.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\bacsinoi.jpg",
+      "PackagePath": "staticwebassets\\images\\bacsinoi.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\bstaimuihong.jpg",
+      "PackagePath": "staticwebassets\\images\\bstaimuihong.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\corgi.png",
+      "PackagePath": "staticwebassets\\images\\corgi.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\dragon-ball-z-7-vien-ngoc-rong.jpg",
+      "PackagePath": "staticwebassets\\images\\dragon-ball-z-7-vien-ngoc-rong.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\home-banner.jpg",
+      "PackagePath": "staticwebassets\\images\\home-banner.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\leminhky-taimuihong.png",
+      "PackagePath": "staticwebassets\\images\\leminhky-taimuihong.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\manh hung - noi soi.png",
+      "PackagePath": "staticwebassets\\images\\manh hung - noi soi.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\thanhbinh- noi soi.png",
+      "PackagePath": "staticwebassets\\images\\thanhbinh- noi soi.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\thuyhang-taimuihong.png",
+      "PackagePath": "staticwebassets\\images\\thuyhang-taimuihong.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\images\\Đặng Hồng Hoa, Trưởng khoa Nội – Cơ xương khớp.png",
+      "PackagePath": "staticwebassets\\images\\Đặng Hồng Hoa, Trưởng khoa Nội – Cơ xương khớp.png"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Lập Trình Web\\PhongKhamOnline\\PhongKhamOnline\\PhongKhamOnline\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PhongKhamOnline.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PhongKhamOnline.props",
+      "PackagePath": "build\\PhongKhamOnline.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PhongKhamOnline.props",
+      "PackagePath": "buildMultiTargeting\\PhongKhamOnline.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PhongKhamOnline.props",
+      "PackagePath": "buildTransitive\\PhongKhamOnline.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

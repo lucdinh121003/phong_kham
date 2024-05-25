@@ -1,0 +1,108 @@
+﻿@model IEnumerable<PhongKhamOnline.Models.BacSi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh Sách Bác Sĩ</h1>
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-success">Thêm Bác Sĩ</button></a>
+</p>
+<p>
+    <a asp-action="Index" asp-area="" asp-controller="Home" ><button type="button" class="btn btn-primary">Home</button></a>
+</p>
+<table class="table">
+    <br />
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoDienThoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChuyenMonBacSiId)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>                  
+            <th>
+                @Html.DisplayNameFor(model => model.SoHenToiDaTrongNgay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnhDaiDien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KhungGioBacSiId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoDienThoai)
+                </td>
+                <td>                  
+                    @if (item.ChuyenMonBacSiId == 1)
+                    {
+                        <span>Tai - Mũi - Họng</span>
+                    }
+                    else if (item.ChuyenMonBacSiId == 2)
+                    {
+                        <span>Nội - Soi</span>
+                    }
+                    else if (item.ChuyenMonBacSiId == 3)
+                    {
+                        <span>Cơ - Xương - Khớp</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoHenToiDaTrongNgay)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.AnhDaiDien))
+                    {
+                        <img src="@item.AnhDaiDien" alt="Product Image" style="max-width:200px;" />
+                    }
+
+                </td>
+                <td>
+                    @if (item.KhungGioBacSiId == 1)
+                    {
+                        <span>7h-11h</span>
+                    }
+                    else if (item.KhungGioBacSiId == 2)
+                    {
+                        <span>14h-17h</span>
+                    }
+                    else if (item.KhungGioBacSiId == 3)
+                    {
+                        <span>17h-21h</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Update</button></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-danger mt-3">Delete</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

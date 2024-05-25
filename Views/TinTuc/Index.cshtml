@@ -1,0 +1,3528 @@
+﻿@using static System.Net.Mime.MediaTypeNames
+<style>
+    .box-breadcrumb-name {
+        text-transform: uppercase;
+    }</style>
+<style>
+    body {
+        background: #fff none repeat scroll 0 0;
+        color: #464646;
+        font: 400 14px arial;
+        text-align: left
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent
+    }
+
+    :root {
+        --swiper-theme-color: #007aff
+    }
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1
+    }
+
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        box-sizing: content-box
+    }
+
+    .swiper-android .swiper-slide, .swiper-wrapper {
+        transform: translate3d(0,0,0)
+    }
+
+    .swiper-pointer-events {
+        touch-action: pan-y
+    }
+
+    .swiper-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition-property: transform
+    }
+
+    .swiper-backface-hidden
+    .swiper-slide {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden
+    }
+
+    :root {
+        --swiper-navigation-size: 44px
+    }
+
+    .swiper-button-lock {
+        display: none
+    }
+
+    .swiper .swiper-notification {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        opacity: 0;
+        z-index: -1000
+    }
+
+    .fblw-timeline-item {
+        background: #fff
+    }
+
+    .fblwtia-mask {
+        background: #f9f9f9;
+        position: absolute;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 10px
+    }
+
+    .fblwtia-title-line {
+        right: 0;
+        left: 36%;
+        top: 0;
+        height: 20px;
+        width: 3%
+    }
+
+    .fblwtia-front-mask {
+        height: 10px;
+        left: 36%;
+        width: 3%
+    }
+
+    .fblwtia-title-mask-1 {
+        top: 30px
+    }
+
+    .fblwtia-front-mask-2 {
+        top: 70px;
+        height: 15px
+    }
+
+    .fblwtia-front-mask-3 {
+        top: 105px
+    }
+
+    .fblwtia-front-mask-4 {
+        top: 125px
+    }
+
+    .fblwtia-sepline-sapo {
+        left: 36%;
+        right: 0
+    }
+
+    .fblwtia-sepline-sapo-0 {
+        top: 20px
+    }
+
+    .fblwtia-sepline-sapo-1 {
+        top: 50px;
+        height: 20px
+    }
+
+    .fblwtia-sepline-sapo-2 {
+        top: 85px;
+        height: 20px
+    }
+
+    .fblwtia-sepline-sapo-3 {
+        top: 115px
+    }
+
+    .fblwtia-sepline-sapo-4 {
+        top: 135px;
+        height: 50px
+    }
+
+    .fblwtia-sapo-line {
+        right: 0
+    }
+
+    .fblwtia-sapo-line-2 {
+        top: 70px;
+        left: 55%;
+        height: 15px
+    }
+
+    .fblwtia-sapo-line-3 {
+        top: 105px;
+        left: 95%
+    }
+
+    .fblwtia-sapo-line-4 {
+        top: 125px;
+        left: 85%;
+        height: 10px
+    }
+
+    .fblwti-animated {
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+        background-size: 800px 200px;
+        height: 110px;
+        position: relative
+    }
+
+    .fblwti-animated {
+        height: 185px
+    }
+
+    .fblwtia-sapo-line-0 {
+        top: 0;
+        left: 98%;
+        height: 20px
+    }
+
+    .fblwtia-sapo-line-1 {
+        top: 30px;
+        left: 85%;
+        height: 20px
+    }
+
+    .fb-loading-wrapper {
+        padding: 25px 0
+    }
+
+    body {
+        font-family: Merriweather;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        background-color: #fff;
+        -webkit-animation-duration: .1s;
+        -webkit-animation-name: fontfix;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: .1s;
+        -webkit-tap-highlight-color: transparent;
+        margin: 0;
+        min-width: 1150px
+    }
+
+    .container {
+        width: 1150px !important;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricPrecision
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none
+    }
+
+    a {
+        text-decoration: none;
+        color: #666;
+        outline: 0
+    }
+
+        a:hover {
+            text-decoration: none
+        }
+
+    p {
+        margin: 0
+    }
+
+    h1, h2, h3 {
+        margin: 0
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        image-rendering: -webkit-optimize-contrast;
+        color: transparent
+    }
+
+    a, input, select, textarea {
+        outline: 0
+    }
+
+    .d-block {
+        display: block !important
+    }
+
+    .pt-20 {
+        padding-top: 20px
+    }
+
+    .mb-40 {
+        margin-bottom: 40px
+    }
+
+    .hidden {
+        display: none !important
+    }
+
+    .img-resize {
+        display: block;
+        position: relative;
+        height: max-content
+    }
+
+        .img-resize:before {
+            padding-bottom: 62.5%;
+            content: "";
+            display: block
+        }
+
+        .img-resize img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            margin: auto;
+            background-size: cover;
+            background-position: center;
+            object-fit: cover
+        }
+
+    .img-square {
+        display: block;
+        position: relative;
+        height: max-content
+    }
+
+        .img-square:before {
+            padding-bottom: 133.33%;
+            content: "";
+            display: block
+        }
+
+        .img-square img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            margin: auto;
+            background-size: cover;
+            background-position: center;
+            object-fit: cover
+        }
+
+    .icon {
+        display: inline-flex
+    }
+
+    .header {
+        min-height: 82px;
+        z-index: 99
+    }
+
+        .header.sticky_header .header__middle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 98;
+            background: #fff
+        }
+
+    ;
+    background-size:contain
+    }
+
+    .header__logo {
+        height: 63px;
+        width: auto;
+        display: inline-block
+    }
+
+        .header__logo img {
+            width: auto;
+            height: 63px
+        }
+
+    .header__top {
+        padding: 24px 0 16px;
+        text-align: center
+    }
+
+    .header__middle {
+        border-bottom: 1.2px solid #d9d9d9
+    }
+
+    .header__postion {
+        position: relative
+    }
+
+    .header__nav {
+        width: max-content;
+        margin: 0 auto
+    }
+
+    .header__nav-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative
+    }
+
+        .header__nav-flex
+        .menu-nav {
+            display: flex;
+            align-items: center
+        }
+
+            .header__nav-flex
+            .menu-nav li:hover
+            .nav-link {
+                color: #0098d1
+            }
+
+            .header__nav-flex .menu-nav li:hover
+            .sub-menu {
+                opacity: 1;
+                visibility: visible;
+                height: auto
+            }
+
+            .header__nav-flex .menu-nav li .nav-link {
+                padding: 11px 0;
+                margin-right: 17px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #292929;
+                display: block
+            }
+
+            .header__nav-flex .menu-nav li .sub-menu {
+                position: absolute;
+                top: 100%;
+                background: #fff;
+                box-shadow: 2px 4px 8px rgba(0,0,0,.08);
+                border-radius: 0 0 8px 8px;
+                width: 100%;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                height: 0%;
+                z-index: 2
+            }
+
+                .header__nav-flex .menu-nav li .sub-menu.loading .sub-menu-flex .category .list .item {
+                    height: 20px;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: infinite;
+                    animation-name: placeHolderShimmer;
+                    animation-timing-function: linear;
+                    background: #f6f7f8;
+                    background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+                    background-size: 800px 200px
+                }
+
+                .header__nav-flex .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-with-avatar {
+                    width: 100%;
+                    height: 140px;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: infinite;
+                    animation-name: placeHolderShimmer;
+                    animation-timing-function: linear;
+                    background: #f6f7f8;
+                    background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+                    background-size: 800px 200px
+                }
+
+                .header__nav-flex .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-title {
+                    content: '';
+                    width: 100%;
+                    height: 60px;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: infinite;
+                    animation-name: placeHolderShimmer;
+                    animation-timing-function: linear;
+                    background: #f6f7f8;
+                    background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+                    background-size: 800px 200px
+                }
+
+                .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex {
+                    display: flex;
+                    padding: 32px
+                }
+
+                    .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category {
+                        width: 408px;
+                        padding-right: 32px;
+                        border-right: 1px solid #ebebeb
+                    }
+
+                        .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category .title-cate {
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 30px;
+                            color: #292929;
+                            margin-bottom: 24px;
+                            display: block
+                        }
+
+                        .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category .list {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between
+                        }
+
+                            .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category .list .item {
+                                display: block;
+                                width: calc(50% - 10px);
+                                font-family: Inter;
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 20px;
+                                color: #454545;
+                                margin-top: 16px
+                            }
+
+                                .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category .list .item:nth-child(1), .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .category .list .item:nth-child(2) {
+                                    margin-top: 0
+                                }
+
+                    .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news {
+                        width: calc(100% - 408px);
+                        display: flex
+                    }
+
+                        .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item {
+                            width: calc(33.33% - 32px);
+                            margin-left: 32px
+                        }
+
+                            .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item .box-category-link-with-avatar {
+                                display: block;
+                                margin-bottom: 8px
+                            }
+
+                            .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item .box-category-link-title {
+                                font-weight: 700;
+                                font-size: 14px;
+                                line-height: 20px;
+                                color: #292929;
+                                display: block
+                            }
+
+        .header__nav-flex .open-menu {
+            display: flex
+        }
+
+            .header__nav-flex .open-menu .icon-bar {
+                display: flex
+            }
+
+            .header__nav-flex .open-menu .icon-close {
+                display: none
+            }
+
+    .header__mega-menu {
+        background: #fafafa;
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 149px);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        height: 0%;
+        transition: opacity .75s,visibility .75s,height .75s;
+        overflow: auto;
+        scrollbar-color: #ddd;
+        scrollbar-width: thin
+    }
+
+        .header__mega-menu::-webkit-scrollbar {
+            width: 3px
+        }
+
+        .header__mega-menu::-webkit-scrollbar-track {
+            background: #f1f1f1
+        }
+
+        .header__mega-menu::-webkit-scrollbar-thumb {
+            background: #ddd
+        }
+
+    .header__mm-flex {
+        display: flex;
+        padding: 20px
+    }
+
+    .header__mm-right {
+        width: 239px;
+        padding-left: 16px;
+        border-left: 1px solid #ebebeb;
+        margin-left: 16px
+    }
+
+        .header__mm-right .box {
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 24px;
+            margin-bottom: 24px
+        }
+
+            .header__mm-right .box .item {
+                display: flex;
+                align-items: center;
+                padding: 8px 0;
+                border: 1px solid #ebebeb;
+                border-radius: 4px;
+                margin-bottom: 16px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #292929
+            }
+
+                .header__mm-right .box .item:last-child {
+                    margin-bottom: 0
+                }
+
+                .header__mm-right .box .item .icon {
+                    padding: 0 8px;
+                    border-right: 1px solid #d9d9d9;
+                    margin-right: 8px
+                }
+
+        .header__mm-right .list-sub {
+            padding-bottom: 24px;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 24px
+        }
+
+            .header__mm-right .list-sub .item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 16px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #454545
+            }
+
+                .header__mm-right .list-sub .item:last-child {
+                    margin-bottom: 0
+                }
+
+                .header__mm-right .list-sub .item .icon {
+                    margin-right: 16px
+                }
+
+        .header__mm-right .social {
+            display: flex;
+            align-items: center
+        }
+
+            .header__mm-right .social .item {
+                display: flex;
+                margin-right: 8px
+            }
+
+                .header__mm-right .social .item:last-child {
+                    margin-right: 0
+                }
+
+    .header__mm-cate {
+        width: calc(100% - 239px - 16px);
+        display: flex;
+        flex-wrap: wrap
+    }
+
+        .header__mm-cate .box {
+            width: calc(25% - 24px);
+            margin-right: 32px;
+            margin-top: 60px
+        }
+
+            .header__mm-cate .box:nth-child(1), .header__mm-cate .box:nth-child(2), .header__mm-cate .box:nth-child(3), .header__mm-cate .box:nth-child(4) {
+                margin-top: 0
+            }
+
+            .header__mm-cate .box:nth-child(4n) {
+                margin-right: 0
+            }
+
+            .header__mm-cate .box .title {
+                margin-bottom: 8px;
+                display: inline-block;
+                font-family: Merriweather;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #292929;
+                border-bottom: 1px solid #0098d1
+            }
+
+            .header__mm-cate .box .list .item {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 18px;
+                color: #454545;
+                display: block;
+                margin-bottom: 12px
+            }
+
+            .header__mm-cate .box .view-more {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+                text-decoration-line: underline;
+                color: #8b8b8b;
+                display: block
+            }
+
+    body.open-menu {
+        overflow: hidden
+    }
+
+        body.open-menu.header_top .header__mega-menu {
+            opacity: 1;
+            visibility: visible;
+            height: calc(100vh - 46px)
+        }
+
+        body.open-menu .header__nav-flex .open-menu .icon-bar {
+            display: none
+        }
+
+        body.open-menu .header__nav-flex .open-menu .icon-close {
+            display: flex
+        }
+
+        body.open-menu .header__mega-menu {
+            opacity: 1;
+            visibility: visible;
+            height: calc(100vh - 149px)
+        }
+
+    .footer {
+        background: #f6f6f6;
+        padding: 40px 0
+    }
+
+    .footer__nav {
+        display: flex;
+        border-bottom: 1px solid #d9d9d9
+    }
+
+        .footer__nav .col {
+            width: calc(20% - 64px);
+            margin-right: 80px
+        }
+
+            .footer__nav .col:last-child {
+                margin-right: 0
+            }
+
+            .footer__nav .col .item {
+                display: block;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #454545;
+                margin-bottom: 16px
+            }
+
+    .footer__middle-flex {
+        border-bottom: 1px solid #d9d9d9;
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .footer__logo {
+        display: block;
+        width: 152px
+    }
+
+    .footer__m-content {
+        display: flex;
+        align-items: center
+    }
+
+        .footer__m-content .list {
+            display: flex;
+            align-items: center;
+            border-right: 1px solid #d9d9d9
+        }
+
+            .footer__m-content .list .item {
+                display: block;
+                margin-right: 24px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #454545
+            }
+
+                .footer__m-content .list .item:last-child {
+                    margin-right: 16px
+                }
+
+        .footer__m-content .social {
+            display: flex;
+            align-items: center;
+            margin-left: 16px
+        }
+
+            .footer__m-content .social span {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #8b8b8b
+            }
+
+            .footer__m-content .social .list-sc {
+                display: flex;
+                align-items: center
+            }
+
+                .footer__m-content .social .list-sc .item {
+                    display: flex;
+                    margin-left: 8px
+                }
+
+    .footer__bottom {
+        padding-top: 16px
+    }
+
+    .footer__bottom-flex {
+        display: flex
+    }
+
+        .footer__bottom-flex .copy-right {
+            flex: 1;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            color: #8b8b8b
+        }
+
+    .footer__contact {
+        width: 160px;
+        margin-right: 80px
+    }
+
+        .footer__contact .text {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            color: #8b8b8b
+        }
+
+        .footer__contact .value {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            color: #0098d1
+        }
+
+    .footer__info {
+        width: 400px;
+        margin-right: 80px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        color: #8b8b8b
+    }
+
+    .layout__sticky-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        position: fixed;
+        right: 40px;
+        bottom: 100px;
+        z-index: 9;
+        flex-direction: column;
+        border-radius: 3px;
+        background: #fff;
+        border: 1px solid #bdbdbd
+    }
+
+        .layout__sticky-icon .text {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #8b8b8b
+        }
+
+        .layout__sticky-icon .icon {
+            display: flex
+        }
+
+    .layout__breadcrumb {
+        margin-bottom: 24px
+    }
+
+        .layout__breadcrumb .box-breadcrumb-name {
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0098d1
+        }
+
+            .layout__breadcrumb .box-breadcrumb-name a {
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 48px;
+                color: #292929
+            }
+
+        .layout__breadcrumb .box-breadcrumb-sub {
+            border-bottom: 1px solid #d9d9d9;
+            display: flex;
+            flex-wrap: wrap
+        }
+
+            .layout__breadcrumb .box-breadcrumb-sub a {
+                padding: 8px 0;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                text-align: center;
+                color: #454545;
+                margin-right: 24px;
+                display: flex
+            }
+
+    #back-to-top {
+        display: none
+    }
+
+        #back-to-top.show {
+            display: block
+        }
+
+    .section__tab-bar {
+        padding: 16px 0
+    }
+
+    .section__tb-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .section__tb-right {
+        width: 325px;
+        margin-left: 60px;
+        display: flex;
+        align-items: center
+    }
+
+        .section__tb-right .box-search {
+            width: 179px;
+            margin-right: 18px;
+            position: relative
+        }
+
+            .section__tb-right .box-search .btn-search {
+                height: 32px;
+                padding: 0 8px;
+                border: 1px solid #ebebeb;
+                border-radius: 4px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 18px;
+                color: #8b8b8b;
+                width: 100%;
+                padding-right: 30px
+            }
+
+            .section__tb-right .box-search .submit-search {
+                display: flex;
+                position: absolute;
+                top: 4px;
+                right: 4px
+            }
+
+        .section__tb-right .box-user {
+            width: calc(100% - 197px)
+        }
+
+            .section__tb-right .box-user .login-btn {
+                display: flex;
+                background: #0098d1;
+                border-radius: 4px;
+                height: 32px;
+                align-items: center;
+                justify-content: center;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #fff
+            }
+
+            .section__tb-right .box-user .user-des {
+                position: relative;
+                padding: 0 8px
+            }
+
+                .section__tb-right .box-user .user-des .title-user {
+                    display: flex;
+                    align-items: center
+                }
+
+                    .section__tb-right .box-user .user-des .title-user .avatar {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        margin-left: 4px
+                    }
+
+                        .section__tb-right .box-user .user-des .title-user .avatar img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover
+                        }
+
+                    .section__tb-right .box-user .user-des .title-user .name {
+                        font-family: Inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 13px;
+                        line-height: 16px;
+                        color: #292929
+                    }
+
+                .section__tb-right .box-user .user-des .list-action {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #fff;
+                    z-index: 2;
+                    padding: 8px;
+                    display: none
+                }
+
+                    .section__tb-right .box-user .user-des .list-action .item {
+                        font-family: Inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 18px;
+                        color: #454545;
+                        display: block;
+                        margin-bottom: 8px
+                    }
+
+    .section__tb-left {
+        width: calc(100% - 385px);
+        display: flex;
+        align-items: center
+    }
+
+        .section__tb-left .time {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            color: #8b8b8b;
+            padding-right: 8px;
+            margin-right: 8px;
+            border-right: 1px solid #d9d9d9
+        }
+
+        .section__tb-left .weather .label-weather {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            color: #8b8b8b;
+            position: relative;
+            margin-right: 11px
+        }
+
+            .section__tb-left .weather .label-weather .content {
+                display: flex;
+                align-items: center
+            }
+
+                .section__tb-left .weather .label-weather .content .add {
+                    margin-right: 4px
+                }
+
+                .section__tb-left .weather .label-weather .content .down {
+                    margin-right: 4px
+                }
+
+                .section__tb-left .weather .label-weather .content .value {
+                    margin-right: 8px
+                }
+
+        .section__tb-left .list-link-sup {
+            flex: 1;
+            display: flex;
+            border: 1px solid #ebebeb;
+            border-radius: 4px;
+            overflow: hidden
+        }
+
+            .section__tb-left .list-link-sup .item {
+                display: flex;
+                padding: 0 10px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 18px;
+                text-align: right;
+                color: #8b8b8b;
+                align-items: center;
+                justify-content: center;
+                flex: 1;
+                white-space: nowrap;
+                height: 32px;
+                border-right: 1px solid #ebebeb
+            }
+
+                .section__tb-left .list-link-sup .item:last-child {
+                    border-right: 0
+                }
+
+                .section__tb-left .list-link-sup .item .icon {
+                    margin-right: 4px
+                }
+
+    .section__stream-sub-cate {
+        margin-bottom: 40px
+    }
+
+    .box-category .box-category-link-with-avatar {
+        position: relative
+    }
+
+        .box-category .box-category-link-with-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+    .box-category[data-layout="8"] .box-category-middle .box-category-item {
+        padding: 32px 0;
+        border-bottom: 1px solid #ebebeb;
+        display: flex
+    }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-link-with-avatar {
+            width: 320px;
+            margin-right: 24px
+        }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content {
+            width: calc(100% - 344px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+
+            .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot {
+                border: 1px solid #f6f6f6;
+                border-radius: 4px;
+                padding: 16px
+            }
+
+                .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot .title-box {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #292929;
+                    margin-bottom: 8px
+                }
+
+                .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot .box-bot-item {
+                    display: flex
+                }
+
+                    .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot .box-bot-item .box-bot-link-with-avatar {
+                        width: 118px;
+                        margin-right: 16px
+                    }
+
+                    .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot .box-bot-item .box-bot-content {
+                        width: calc(100% - 134px)
+                    }
+
+                        .box-category[data-layout="8"] .box-category-middle .box-category-item[data-stream='2'] .box-category-content .box-content-bot .box-bot-item .box-bot-content .box-category-link-title {
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: #292929;
+                            display: block
+                        }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item:first-child {
+            padding-top: 0
+        }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item:last-child {
+            border-bottom: 0;
+            padding-bottom: 0
+        }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-link-with-avatar {
+            width: 328px;
+            margin-right: 24px
+        }
+
+        .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content {
+            width: calc(100% - 352px)
+        }
+
+            .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .box-category-category {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #8b8b8b;
+                display: block;
+                margin-bottom: 8px
+            }
+
+            .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .box-category-link-title {
+                font-weight: 700;
+                font-size: 17px;
+                line-height: 26px;
+                color: #292929;
+                margin-bottom: 8px;
+                display: block
+            }
+
+            .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .box-category-sapo {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #454545
+            }
+
+            .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .item-related {
+                padding-top: 24px
+            }
+
+                .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .item-related .box-category-related-link-title {
+                    font-family: Inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 22px;
+                    color: #454545;
+                    padding-left: 28px;
+                    display: block;
+                    position: relative
+                }
+
+                    .box-category[data-layout="8"] .box-category-middle .box-category-item .box-category-content .item-related .box-category-related-link-title:before {
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        position: absolute;
+                        left: 10px;
+                        top: 8px;
+                        border: 1px solid #8b8b8b;
+                        border-radius: 50%
+                    }
+
+    .box-category[data-layout="9"] .box-category-top {
+        margin-bottom: 16px;
+        text-align: center
+    }
+
+        .box-category[data-layout="9"] .box-category-top .box-category-title {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 26px;
+            color: #292929;
+            border-bottom: 1px solid #0098d1
+        }
+
+    .box-category[data-layout="9"] .box-category-middle .box-category-item {
+        margin-bottom: 16px
+    }
+
+        .box-category[data-layout="9"] .box-category-middle .box-category-item .box-category-link-with-avatar {
+            margin-bottom: 8px
+        }
+
+        .box-category[data-layout="9"] .box-category-middle .box-category-item .box-category-link-title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: #292929;
+            display: block
+        }
+
+    .box-category[data-layout="9"] .box-category-middle .box-category-sub .box-sub-item {
+        border-top: 1px solid #ebebeb;
+        display: flex;
+        padding: 16px 0
+    }
+
+        .box-category[data-layout="9"] .box-category-middle .box-category-sub .box-sub-item:last-child {
+            padding-bottom: 0
+        }
+
+        .box-category[data-layout="9"] .box-category-middle .box-category-sub .box-sub-item .box-category-link-with-avatar {
+            width: 84px;
+            height: 84px;
+            margin-right: 16px
+        }
+
+        .box-category[data-layout="9"] .box-category-middle .box-category-sub .box-sub-item .box-category-content {
+            width: calc(100% - 100px)
+        }
+
+            .box-category[data-layout="9"] .box-category-middle .box-category-sub .box-sub-item .box-category-content .box-category-link-title {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #292929;
+                display: block
+            }
+
+    .box-category[data-layout="17"] .box-category-middle .box-category-item-main {
+        display: flex;
+        margin-bottom: 24px
+    }
+
+        .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-related {
+            width: 270px;
+            padding-left: 16px;
+            border-left: 1px solid #ebebeb;
+            margin-left: 16px
+        }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-related .box-category-item {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid #ebebeb
+            }
+
+                .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-related .box-category-item:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border-bottom: 0
+                }
+
+                .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-related .box-category-item .box-category-link-with-avatar {
+                    margin-bottom: 8px
+                }
+
+                .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-related .box-category-item .box-category-link-title {
+                    font-family: Merriweather;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #292929;
+                    display: block
+                }
+
+        .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-first {
+            width: calc(100% - 286px)
+        }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-first .box-category-link-with-avatar {
+                margin-bottom: 16px
+            }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-first a.box-category-link-title {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: #292929;
+                display: block;
+                margin-bottom: 16px
+            }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-item-main .item-first .box-category-sapo {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #454545
+            }
+
+    .box-category[data-layout="17"] .box-category-middle .box-category-sub {
+        padding-top: 24px;
+        border-top: 1px solid #ebebeb;
+        display: flex;
+        justify-content: space-between
+    }
+
+        .box-category[data-layout="17"] .box-category-middle .box-category-sub .box-category-item {
+            width: calc(50% - 16px);
+            display: flex
+        }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-sub .box-category-item .box-category-link-with-avatar {
+                width: 146px;
+                margin-right: 8px
+            }
+
+            .box-category[data-layout="17"] .box-category-middle .box-category-sub .box-category-item .box-category-content {
+                width: calc(100% - 154px)
+            }
+
+                .box-category[data-layout="17"] .box-category-middle .box-category-sub .box-category-item .box-category-content .box-category-link-title {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #292929
+                }
+
+    .list__stream {
+        margin-bottom: 40px
+    }
+
+        .list__stream .view-more {
+            background: #fafafc;
+            border: 1px solid #ebebeb;
+            border-radius: 4px;
+            margin-top: 32px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #8b8b8b
+        }
+
+    .list__stream-flex {
+        display: flex
+    }
+
+    .list__stream-sub {
+        width: 325px;
+        margin-left: 60px
+    }
+
+    .list__stream-main {
+        width: calc(100% - 385px)
+    }
+
+    .list__focus {
+        margin-bottom: 40px
+    }
+
+    .list__focus-flex {
+        display: flex
+    }
+
+    .list__focus-sub {
+        width: 300px;
+        margin-left: 72.5px
+    }
+
+    .list__focus-main {
+        width: calc(100% - 372.5px)
+    }
+
+    .weather {
+        position: relative
+    }
+
+    .box_weather {
+        background: #fff;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        overflow: hidden;
+        overflow-y: auto;
+        top: 26px;
+        transition: all .2s;
+        font-size: 13px;
+        right: 0;
+        box-sizing: border-box;
+        box-shadow: 0 0 24px rgba(0,0,0,.16);
+        border-radius: 6px;
+        z-index: 9;
+        scrollbar-color: #565656;
+        scrollbar-width: thin
+    }
+
+        .box_weather .search_city {
+            width: 100%;
+            padding: 10px 40px 10px 10px;
+            outline: 0;
+            border: none;
+            background-color: #f7f7f8 !important;
+            background: url(https://static.thanhnien.com.vn/thanhnien.vn/image/Union.svg) 97% 10px no-repeat
+        }
+
+        .box_weather ul li {
+            width: 100%;
+            padding: 13px 14px 13px 10px;
+            border-bottom: 1px solid rgba(225,225,240,.5);
+            box-sizing: border-box;
+            cursor: pointer
+        }
+
+    .box-weather .content {
+        cursor: pointer
+    }
+
+    .box_weather::-webkit-scrollbar {
+        width: 5px
+    }
+
+    .box_weather::-webkit-scrollbar-thumb {
+        background: #ccc
+    }
+
+    .fb-loading-wrapper {
+        max-width: 100%;
+        clear: both;
+        padding: 25px 0;
+        display: block
+    }
+
+    .fblw-timeline-item {
+        background: #fff
+    }
+
+    .fblwtia-mask {
+        background: #fff;
+        position: absolute;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 10px
+    }
+
+    .fblwtia-title-line {
+        right: 0;
+        left: 260px;
+        top: 0;
+        height: 50px;
+        width: 3%
+    }
+
+    .fblwtia-front-mask {
+        height: 10px;
+        left: 260px;
+        width: 3%
+    }
+
+    .fblwtia-title-mask-1 {
+        top: 60px
+    }
+
+    .fblwtia-front-mask-2 {
+        top: 0;
+        height: 15px
+    }
+
+    .fblwtia-front-mask-3 {
+        top: 100px
+    }
+
+    .fblwtia-front-mask-4 {
+        top: 120px
+    }
+
+    .fblwtia-sepline-sapo {
+        left: 260px;
+        right: 0
+    }
+
+    .fblwtia-sepline-sapo-0 {
+        top: 15px
+    }
+
+    .fblwtia-sepline-sapo-1 {
+        top: 45px;
+        height: 15px
+    }
+
+    .fblwtia-sepline-sapo-2 {
+        top: 80px;
+        height: 20px
+    }
+
+    .fblwtia-sepline-sapo-3 {
+        top: 110px
+    }
+
+    .fblwtia-sepline-sapo-4 {
+        top: 130px;
+        height: 40px
+    }
+
+    .fblwtia-sapo-line {
+        right: 0
+    }
+
+    .fblwtia-sapo-line-2 {
+        top: 0;
+        left: 55%;
+        height: 15px
+    }
+
+    .fblwtia-sapo-line-3 {
+        top: 100px;
+        left: 95%
+    }
+
+    .fblwtia-sapo-line-4 {
+        top: 120px;
+        left: 85%;
+        height: 10px
+    }
+
+    .fblwti-animated {
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+        background-size: 800px 200px;
+        height: 110px;
+        position: relative
+    }
+
+    .fblwti-animated {
+        height: 156px
+    }
+
+    .fblwtia-sapo-line-0 {
+        top: 0;
+        left: 98%;
+        height: 20px
+    }
+
+    .fblwtia-sapo-line-1 {
+        top: 60px;
+        left: 85%;
+        height: 20px
+    }
+
+    .header__nav-flex .menu-nav li .nav-link.active {
+        color: #0098d1
+    }
+
+    .alert-box {
+        display: none
+    }
+
+        .alert-box .alert-content {
+            width: 0;
+            opacity: 0;
+            padding: 20px
+        }
+
+    .layout__breadcrumb .box-breadcrumb-name h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;
+        color: #292929
+    }
+
+    .alert-box {
+        display: none
+    }
+
+        .alert-box .alert-content {
+            width: 0;
+            opacity: 0;
+            padding: 20px
+        }
+
+    .section__tb-left .weather .label-weather .content .value {
+        margin-top: -4px
+    }
+
+    .header__mega-menu .header__mm-flex .header__mm-cate .box .list {
+        max-height: 115px;
+        overflow: hidden
+    }
+
+    .box-category .box-category-link-title[data-newstype="1"]::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url("https://static.thanhnien.com.vn/thanhnien.vn/image/t-image.png");
+        background-size: auto;
+        display: inline-flex;
+        top: 3px;
+        position: relative;
+        margin-right: 4px;
+        background-size: cover !important
+    }
+
+    .box-category .box-category-link-title[data-newstype="2"]::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url("https://static.thanhnien.com.vn/thanhnien.vn/image/t-video.png");
+        background-size: auto;
+        display: inline-flex;
+        top: 3px;
+        position: relative;
+        margin-right: 4px;
+        background-size: cover !important
+    }
+
+    .box-category .box-category-link-title[data-newstype]:not([data-type="5"],[data-newstype="11"]):before {
+        content: "\200B" !important
+    }
+
+    .header__nav-flex .menu-nav li .sub-menu {
+        z-index: 9999
+    }
+
+    .alert-box {
+        display: none
+    }
+
+        .alert-box .alert-content {
+            width: 0;
+            opacity: 0;
+            padding: 20px
+        }
+
+    .box-breadcrumb-sub .swiper-slide {
+        width: auto !important
+    }
+
+    .box-breadcrumb-sub {
+        display: flex;
+        align-items: center
+    }
+
+        .box-breadcrumb-sub .list {
+            flex: 1
+        }
+
+        .box-breadcrumb-sub .swiper-wrapper {
+            flex: 1
+        }
+
+        .box-breadcrumb-sub .box-control {
+            display: flex;
+            align-items: center;
+            cursor: pointer
+        }
+
+            .box-breadcrumb-sub .box-control .list-tag-next, .box-breadcrumb-sub .box-control .list-tag-prev {
+                display: contents
+            }
+
+    .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        width: 100%;
+        height: 5px
+    }
+
+    .super-masthead {
+        min-height: 250px
+    }
+
+    .top-banner {
+        min-height: 90px
+    }
+
+    .open-menu {
+        overflow: auto !important
+    }
+
+    .header__nav, .header__nav-flex {
+        width: 1260px !important;
+        margin: 0 auto
+    }
+
+    .header__middle, .header__postion {
+        width: 100%
+    }
+
+    .header__nav-flex .menu-nav {
+        width: 1228px !important
+    }
+
+        .header__nav-flex .menu-nav li .sub-menu {
+            z-index: 9999
+        }
+
+    .section__tb-right .box-user .user-des .title-user .name {
+        width: 100px;
+        max-width: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap
+    }
+
+    .header__mega-menu {
+        z-index: 999999
+    }
+
+    .section__topbanner {
+        margin-bottom: 10px
+    }
+
+    .header__mega-menu {
+        overflow: hidden
+    }
+
+    body.open-menu.header_top .header__mega-menu {
+        overflow-y: auto;
+        padding-bottom: 20px
+    }
+
+    .box-category[data-layout="10"] .box-category-top .box-category-title, .box-category[data-layout="6"] .box-category-top .box-category-title, .box-category[data-layout="9"] .box-category-top .box-category-title {
+        box-shadow: 0 1px 1px -1px #0098d1
+    }
+
+    .header__nav, .header__nav-flex {
+        width: 1180px !important;
+        margin: 0 auto
+    }
+
+        .header__nav-flex .menu-nav li .nav-link {
+            margin-right: 10px
+        }
+
+        .header__nav-flex .open-menu {
+            display: block
+        }
+
+    .open-menu {
+        cursor: pointer
+    }
+
+    .swiper-wrapper .append-news .box-category-category, .swiper-wrapper .append-news .item-related {
+        display: none !important
+    }
+
+    .detail-title-bottom, .detail-title-top {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #292929
+    }
+
+    .detail__video-section .box-video-content .detail-title-bottom, .detail__video-section .box-video-content .detail-title-top {
+        color: #fff
+    }
+
+    .box-header {
+        background: #0098d1 !important
+    }
+
+    .detail__cmain-sub .box-header, .list__focus-sub .box-header, .section__tno .box-header {
+        background: #fff !important
+    }
+
+    .box-category[data-layout="4"] .box-category-middle {
+        flex: unset
+    }
+
+    .box-category[data-layout="4"] .box-category-top {
+        margin-top: 32px
+    }
+
+    .section__nsp-box-cate {
+        margin-bottom: 25px
+    }
+
+    .box-breadcrumb-sub .swiper-slide img {
+        height: 17px;
+        align-self: center;
+        width: auto
+    }
+
+    .box-breadcrumb-sub .swiper-wrapper h1 {
+        display: contents
+    }
+
+    .detail__scroll-action .btn-font .btn-cfont {
+        border: 1px solid #bdbdbd;
+        cursor: pointer
+    }
+
+    .detail__cmain .detail-title {
+        font-size: 34px
+    }
+
+    .box-lf-content div p {
+        color: #fff;
+        padding: 10px
+    }
+
+    .box-tn .tn-heading .tn-heading_2 {
+        width: 81%;
+        margin: 0 auto
+    }
+
+    .box-tn .box-category-link-with-avatar {
+        width: 210px;
+        margin: 0 auto
+    }
+
+    .nav-link.home.active svg path {
+        fill: #0098d1
+    }
+
+    .light-box-bounder {
+        z-index: 99991 !important
+    }
+
+    .header, .open-menu .header__mega-menu {
+        z-index: 99
+    }
+
+    .min-h-250 {
+        min-height: 250px
+    }
+
+    .min-h-650 {
+        min-height: 650px
+    }
+
+    .min-h-600 {
+        min-height: 600px
+    }
+
+    (max-width:1440px) {
+        .alert-box.show .alert-content
+
+    {
+        height: auto;
+        min-height: 200px
+    }
+
+    .login-box.show .alert-content {
+        height: 560px
+    }
+
+    .header__ttt-flex, .header__ttt-flex .action-right, .header__ttt-flex .btn-back {
+        align-items: center;
+        display: flex
+    }
+
+        .header__emagazine-flex .list-action .item, .header__ttt-flex .action-right .ttt-search .ttt-btn-search, .header__ttt-flex .btn-back {
+            font-weight: 400;
+            color: #8b8b8b;
+            font-family: Inter;
+            font-style: normal
+        }
+
+    .header__logo, .header__logo img {
+        width: auto;
+        height: 81px
+    }
+
+    .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .category .list .item, .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-title, .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-with-avatar {
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear
+    }
+
+    .header__nav .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item:last-child, .header__nav .menu-nav li:last-child .nav-link {
+        margin-right: 0
+    }
+
+    .header__mm-right .box .item:last-child, .header__mm-right .list-sub .item:last-child {
+        margin-bottom: 0
+    }
+
+    .header__mm-cate .box:first-child, .header__mm-cate .box:nth-child(2), .header__mm-cate .box:nth-child(3), .header__mm-cate .box:nth-child(4), .header__nav .menu-nav li .sub-menu .sub-menu-flex .category .list .item:first-child, .header__nav .menu-nav li .sub-menu .sub-menu-flex .category .list .item:nth-child(2) {
+        margin-top: 0
+    }
+
+    .header {
+        min-height: 209px;
+        background: #fff
+    }
+
+        .header.sticky_header .header__sticky {
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 98;
+            background: #fff
+        }
+
+        .header.sticky_header .header__top {
+            padding: 8px 0
+        }
+
+        .header.sticky_header .header__logo, .header.sticky_header .header__logo img {
+            height: 56px
+        }
+
+    .header__ttt {
+        min-height: 59px;
+        background: #fafafa
+    }
+
+        .header__ttt .header__sc {
+            background: 0 0
+        }
+
+        .header__ttt .header__middle {
+            border-bottom: 0;
+            background: #fafafa !important
+        }
+
+    .header__ttt-flex {
+        justify-content: space-between;
+        padding: 16px 0 8px;
+        border-bottom: 1px solid #ebebeb
+    }
+
+        .header__ttt-flex .btn-back {
+            border: 1px solid #ebebeb;
+            border-radius: 4px;
+            padding: 6px 4px;
+            font-size: 15px;
+            line-height: 22px;
+            text-align: center
+        }
+
+    .header__mm-right .box, .header__mm-right .list-sub {
+        padding-bottom: 24px;
+        margin-bottom: 24px
+    }
+
+    .header__ttt-flex .btn-back .icon {
+        margin-right: 4px
+    }
+
+    .header__ttt-flex .action-right .ttt-search {
+        width: 179px;
+        position: relative
+    }
+
+        .header__ttt-flex .action-right .ttt-search .ttt-btn-search {
+            width: 100%;
+            height: 34px;
+            border: 1px solid #ebebeb;
+            border-radius: 4px;
+            padding: 0 34px 0 8px;
+            font-size: 13px;
+            line-height: 18px;
+            background: #fafafa
+        }
+
+        .header__ttt-flex .action-right .ttt-search .ttt-btn-submit {
+            height: 34px;
+            width: 34px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+    .header__ttt-flex .action-right .list-social {
+        display: flex;
+        align-items: center
+    }
+
+        .header__ttt-flex .action-right .list-social .item {
+            display: flex;
+            margin-left: 16px
+        }
+
+    .header__emagazine {
+        min-height: 52px
+    }
+
+        .header__emagazine .header__sc {
+            background: 0 0
+        }
+
+    .header__emagazine-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 16px
+    }
+
+        .header__emagazine-flex .back-thanhnien {
+            width: 450px;
+            display: flex;
+            align-items: center
+        }
+
+            .header__emagazine-flex .back-thanhnien .icon {
+                margin-right: 8px
+            }
+
+        .header__emagazine-flex .header__ename {
+            margin: 0
+        }
+
+        .header__emagazine-flex .list-action {
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            display: flex
+        }
+
+            .header__emagazine-flex .list-action .item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 16px;
+                border-right: 1px solid #d9d9d9;
+                font-size: 13px;
+                line-height: 18px;
+                text-align: right
+            }
+
+                .header__emagazine-flex .list-action .item:last-child {
+                    border-right: 0
+                }
+
+                .header__emagazine-flex .list-action .item .icon {
+                    margin-right: 6px
+                }
+
+                .header__emagazine-flex .list-action .item .donw {
+                    display: flex
+                }
+
+    .header__sc {
+        background: 0 0 !important
+    }
+
+    .header__logo {
+        display: inline-block;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -o-transition: .3s-ms-transition:.3s;
+        transition: .3s
+    }
+
+    .header__top {
+        padding: 16px 0;
+        text-align: center;
+        border-bottom: 1px solid #d9d9d9;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -o-transition: .3s;
+        -ms-transition: .3s;
+        transition: .3s
+    }
+
+    .header.sticky_header .header__middle, .header__postion {
+        position: relative
+    }
+
+    .header__nav {
+        width: max-content;
+        margin: 0 auto
+    }
+
+        .header__nav .menu-nav {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #0098d1;
+            width: 100%;
+            position: relative
+        }
+
+    .header__mm-right .box, .header__mm-right .list-sub, .header__uc-news .mid .item-news:last-child {
+        border-bottom: 1px solid #ebebeb
+    }
+
+    .header__nav .menu-nav li:hover .nav-link, .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item .box-category-link-title:hover, .header__uc-news .top .view-more {
+        color: #0098d1
+    }
+
+    .header__nav .menu-nav li:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        height: auto
+    }
+
+    .header__nav .menu-nav li .nav-link {
+        padding: 14px 0;
+        margin-right: 9.56px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #292929;
+        display: flex;
+        align-items: center
+    }
+
+    .header__nav .menu-nav li .sub-menu {
+        position: absolute;
+        top: 100%;
+        background: #fff;
+        box-shadow: 2px 4px 8px rgba(0,0,0,.08);
+        border-radius: 0 0 8px 8px;
+        width: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        height: 0%;
+        z-index: 2;
+        border-top: 2px solid #0098d1
+    }
+
+        .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .category .list .item {
+            height: 20px;
+            background: #f6f7f8;
+            background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+            background-size: 800px 200px
+        }
+
+        .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-with-avatar {
+            width: 100%;
+            height: 140px;
+            background: #f6f7f8;
+            background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+            background-size: 800px 200px
+        }
+
+        .header__nav .menu-nav li .sub-menu.loading .sub-menu-flex .news .box-category-item .box-category-link-title {
+            content: '';
+            width: 100%;
+            height: 60px;
+            background: #f6f7f8;
+            background: linear-gradient(to right,#eee 8%,#ddd 18%,#eee 33%);
+            background-size: 800px 200px
+        }
+
+        .header__nav .menu-nav li .sub-menu .sub-menu-flex {
+            display: flex;
+            padding: 24px
+        }
+
+            .header__nav .menu-nav li .sub-menu .sub-menu-flex .category {
+                width: 400px;
+                padding-right: 24px;
+                border-right: 1px solid #ebebeb;
+                margin-right: 24px
+            }
+
+                .header__nav .menu-nav li .sub-menu .sub-menu-flex .category .title-cate {
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #292929;
+                    margin-bottom: 24px;
+                    display: block
+                }
+
+                .header__nav .menu-nav li .sub-menu .sub-menu-flex .category .list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between
+                }
+
+                    .header__nav .menu-nav li .sub-menu .sub-menu-flex .category .list .item {
+                        display: block;
+                        width: calc(50% - 10px);
+                        font-family: Inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #454545;
+                        margin-top: 16px
+                    }
+
+            .header__nav .menu-nav li .sub-menu .sub-menu-flex .news {
+                width: calc(100% - 424px);
+                display: flex
+            }
+
+                .header__nav .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item {
+                    width: calc(33.33% - 16px);
+                    margin-right: 24px
+                }
+
+                    .header__nav .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item .box-category-link-with-avatar {
+                        display: block;
+                        margin-bottom: 8px
+                    }
+
+                    .header__nav .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item .box-category-link-title {
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #292929;
+                        display: block
+                    }
+
+    .header__container {
+        width: 1630px;
+        padding: 0 15px;
+        max-width: 100%;
+        margin: 0 auto
+    }
+
+    .header__mega-menu::-webkit-scrollbar {
+        width: 3px
+    }
+
+    .header__mega-menu::-webkit-scrollbar-track {
+        background: #f1f1f1
+    }
+
+    .header__mega-menu::-webkit-scrollbar-thumb {
+        background: #ddd
+    }
+
+        .header__mega-menu::-webkit-scrollbar-thumb:hover {
+            background: #555
+        }
+
+    .header__mm-flex {
+        display: flex;
+        padding: 20px
+    }
+
+    .header__mm-right {
+        width: 239px;
+        padding-left: 16px;
+        border-left: 1px solid #ebebeb;
+        margin-left: 16px
+    }
+
+        .header__mm-right .box .item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border: 1px solid #ebebeb;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: #292929
+        }
+
+            .header__mm-right .box .item .icon {
+                padding: 0 8px;
+                border-right: 1px solid #d9d9d9;
+                margin-right: 8px
+            }
+
+        .header__mm-right .list-sub .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #454545
+        }
+
+            .header__mm-right .list-sub .item .icon {
+                margin-right: 16px
+            }
+
+        .header__mm-right .social {
+            display: flex;
+            align-items: center
+        }
+
+            .header__mm-right .social .item {
+                display: flex;
+                margin-right: 8px
+            }
+
+                .header__mm-cate .box:nth-child(4n), .header__mm-right .social .item:last-child {
+                    margin-right: 0
+                }
+
+    .header__mm-cate {
+        width: calc(100% - 239px - 16px);
+        display: flex;
+        flex-wrap: wrap
+    }
+
+        .header__mm-cate .box {
+            width: calc(25% - 24px);
+            margin-right: 32px;
+            margin-top: 60px
+        }
+
+            .header__mm-cate .box .title {
+                margin-bottom: 8px;
+                display: inline-block;
+                font-family: Merriweather;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #292929;
+                border-bottom: 1px solid #0098d1
+            }
+
+            .header__mm-cate .box .list .item, .header__mm-cate .box .view-more, .header__ov-list .time.datetimenow {
+                min-width: 116px
+            }
+
+    .header__ov-list .item, .header__ov-social .text, .header__tf-right .item, .header__tf-search .btn-search {
+        font-family: Inter;
+        font-style: normal
+    }
+
+    .header__mm-cate .box .list .item {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        color: #454545;
+        display: block;
+        margin-bottom: 12px
+    }
+
+    .header__mm-cate .box .view-more {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        text-decoration-line: underline;
+        color: #8b8b8b;
+        display: block
+    }
+
+    .header__ov {
+        background: #fafafa;
+        padding: 8.5px 0
+    }
+
+    .header__ov-flex, .header__top-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .header__ov-list, .header__ov-list .item, .header__ov-social {
+        align-items: center;
+        display: flex
+    }
+
+        .header__ov-list .item {
+            border-right: 1px solid #d9d9d9;
+            padding-right: 8px;
+            margin-right: 8px;
+            height: 23px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            color: #454545
+        }
+
+            .header__ov-list .item:last-child {
+                border-right: 0;
+                padding-right: 0;
+                margin-right: 0
+            }
+
+        .header__ov-list .weather {
+            display: flex
+        }
+
+        .header__ov-list .box-weather .content {
+            cursor: pointer;
+            display: flex;
+            align-items: center
+        }
+
+            .header__ov-list .box-weather .content .value {
+                margin: -4px 8px 0
+            }
+
+            .header__nav-flex .menu-nav li:first-child .nav-link, .header__ov-list .box-weather .content .down {
+                margin-left: 4px
+            }
+
+        .header__ov-social .text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #454545
+        }
+
+        .header__ov-social .list {
+            display: flex;
+            align-items: center
+        }
+
+            .header__ov-social .list .item {
+                display: flex;
+                align-items: center;
+                margin-left: 8px;
+                width: 24px;
+                height: 24px
+            }
+
+    .header__tf-left {
+        flex: 1;
+        display: flex;
+        align-items: center
+    }
+
+    .header__tf-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end
+    }
+
+        .header__tf-right .item {
+            margin: 0 0 0 24px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 13px;
+            text-transform: uppercase;
+            color: #292929
+        }
+
+            .header__tf-right .item.login .icon {
+                background: #58cefa
+            }
+
+            .header__tf-right .item .icon {
+                background: #fedb00;
+                border-radius: 100px;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center
+            }
+
+            .header__tf-right .item .text {
+                margin-right: -5px;
+                z-index: 2;
+                position: relative;
+                top: 2px
+            }
+
+    .header__tf-menu {
+        display: flex;
+        margin-right: 24px;
+        cursor: pointer
+    }
+
+    .header__tf-search {
+        width: 260px
+    }
+
+        .header__tf-search .box-search {
+            display: flex;
+            position: relative
+        }
+
+        .header__tf-search .btn-search {
+            height: 36px;
+            width: 100%;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            padding: 0 10px 0 38px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #8b8b8b
+        }
+
+    .header__close-menu, .header__uc-news .mid .item-news .item-top .time, .header__uc-news .top {
+        font-size: 14px;
+        line-height: 20px;
+        font-family: Inter;
+        font-style: normal
+    }
+
+    .header__tf-search .submit-search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 8px;
+        top: 5px
+    }
+
+    .header__close-menu {
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        color: #454545;
+        cursor: pointer
+    }
+
+        .header__close-menu .icon {
+            margin-right: 4px;
+            display: flex
+        }
+
+    .header__user {
+        padding-left: 24px;
+        position: relative;
+        margin-left: 24px
+    }
+
+        .header__user.show .header__user-content, body.open-menu .header__mega-menu, body.open-menu.header_top .header__mega-menu {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .header__user:before {
+            width: 1px;
+            height: 22px;
+            background: #d9d9d9;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: block;
+            transform: translateY(-50%)
+        }
+
+    .detail-fb-like-share, .header__user-title {
+        display: flex;
+        align-items: center
+    }
+
+        .header__user-title .avatar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        .header__user-title .icon-down {
+            display: flex;
+            margin-left: 4px;
+            cursor: pointer
+        }
+
+    .header__user-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        width: 375px;
+        z-index: 2;
+        text-align: left;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s
+    }
+
+    .header__uc-main {
+        padding: 16px
+    }
+
+    .header__uc-news {
+        margin-bottom: 16px
+    }
+
+        .header__uc-news .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: #8b8b8b
+        }
+
+        .header__uc-news .mid .item-news {
+            display: block;
+            padding: 16px 0;
+            border-bottom: 1px dashed #bdbdbd
+        }
+
+            .header__uc-news .mid .item-news .item-top {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 4px
+            }
+
+                .header__uc-news .mid .item-news .item-top .time {
+                    font-weight: 400;
+                    color: #0098d1
+                }
+
+            .header__uc-news .mid .item-news .title {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #292929;
+                margin-bottom: 4px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden
+            }
+
+            .header__uc-link .item-link, .header__uc-news .mid .item-news .sapo {
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px
+            }
+
+            .header__uc-news .mid .item-news .sapo {
+                color: #8b8b8b;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden
+            }
+
+    .header__uc-link .item-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        color: #292929
+    }
+
+        .header__uc-link .item-link:last-child {
+            border-top: 1px solid #ebebeb;
+            padding-top: 16px;
+            margin-bottom: 0
+        }
+
+        .header__uc-link .item-link .icon {
+            margin-right: 16px
+        }
+
+    .header__mega-menu {
+        background: #fafafa;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        height: 0%;
+        transition: opacity .75s,visibility .75s,height .75s;
+        overflow: auto;
+        scrollbar-color: #ddd;
+        scrollbar-width: thin;
+        padding: 42px
+    }
+
+    body.open-menu .header__mega-menu, body.open-menu.header_top .header__mega-menu {
+        height: 100vh
+    }
+
+    .header__nav-flex, .header__nav-flex .menu-nav {
+        width: 1120px !important
+    }
+
+        .header__nav-flex .menu-nav li .nav-link {
+            margin-right: 10px
+        }
+
+        .header__nav-flex .menu-nav li:last-child .nav-link {
+            margin-right: unset
+        }
+
+        .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex .news .box-category-item {
+            width: calc(33.33% - 16px);
+            margin-left: 0
+        }
+
+        .header__nav-flex .menu-nav li .sub-menu .sub-menu-flex {
+            padding: 24px
+        }
+
+    .header__user {
+        z-index: 97
+    }
+
+    .header__middle {
+        border-bottom: 0 !important
+    }
+
+    .detail__scroll-action {
+        top: 140px
+    }
+
+    .box-bottom.isLogin .box-user .icon-down, .header_top .header__ov {
+        display: none
+    }
+
+    .header.sticky_header .header__sticky {
+        position: unset
+    }
+
+    .header_top .header.sticky_header .header__sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 98;
+        background: #fff
+    }
+
+    body.open-menu {
+        overflow: hidden !important
+    }
+
+    .header__ov .weather {
+        min-width: 134px
+    }
+
+    .open-menu .header.sticky_header .header__middle {
+        z-index: 100
+    }
+
+    .header_fixed.header_top .header.sticky_header .header__sticky {
+        transform: translateY(-73px);
+        transition: .8s
+    }
+
+    .header__nav-flex, .header__top {
+        background: #fff
+    }
+
+    .detail-fb-like-share .send-messenger {
+        width: 21px;
+        height: 21px;
+        margin-left: 5px;
+        cursor: pointer
+    }
+
+    .main.preview:before {
+        background-image: url('https://static.thanhnien.com.vn/thanhnien.vn/image/preview.png') !important
+    }
+
+    .header.sticky_header .header__middle {
+        z-index: 90
+    }
+
+    .box-bottom.isLogin .box-user .name {
+        text-align: left
+    }
+
+    img {
+        height: auto;
+    }
+
+    .img-resize img, .img-resize video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        margin: auto;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<div class="main">
+    <div class="layout__breadcrumb">
+        <div class="container">
+            <div class="box-breadcrumb" data-layout="1">
+                <div class="box-breadcrumb-name">
+                    <h1>
+                        Tin Tức Trong Tuần
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="list__stream-flex">
+            <div class="list__stream-main">
+                <div class="box-category box-border-top" data-layout="8">
+                    <div class="box-category-middle">
+                        <div class="box-category-item" data-id="185240304154327832" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm" data-io-canonical-url="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm"
+                               title="Bệnh viện quá tải do bác sĩ đình công, người Việt ở Hàn Quốc chọn trở về điều trị">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/3/4/5a17d71a5f5df303aa4c-1709541962202504267708-83-0-1333-2000-crop-17095421573692077811385.jpg" alt="Bệnh viện quá tải do bác sĩ đình công, người Việt ở Hàn Quốc chọn trở về điều trị"
+                                     title="Bệnh viện quá tải do bác sĩ đình công, người Việt ở Hàn Quốc chọn trở về điều trị" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/doi-song.htm"
+                                   title="Đời sống">Đời sống</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm"
+                                       title="Bệnh viện quá tải do bác sĩ đình công, người Việt ở Hàn Quốc chọn trở về điều trị">Bệnh viện quá tải do bác sĩ đình công, người Việt ở Hàn Quốc chọn trở về điều trị</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/benh-vien-qua-tai-do-dinh-cong-nguoi-viet-o-han-quoc-chon-tro-ve-dieu-tri-185240304154327832.htm"
+                                       data-id="185240304093630325"
+                                       class="box-category-related-link-title"
+                                       data-newstype="16"
+                                       href="/nguoi-me-co-con-mac-benh-hiem-hanh-phuc-la-con-duoc-om-con-vao-long-185240304093630325.htm"
+                                       title="Người mẹ có con mắc bệnh hiếm: &#039;Hạnh phúc là còn được ôm con vào lòng&#039;">Người mẹ có con mắc bệnh hiếm: &#039;Hạnh phúc là còn được ôm con vào lòng&#039;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240303180406943" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm" data-io-canonical-url="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm"
+                               title="Chấn chỉnh việc ca hát trong bệnh viện">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/3/3/bv1-17094634025441457482801-0-9-297-484-crop-17094719651371913910608.png" alt="Chấn chỉnh việc ca hát trong bệnh viện"
+                                     title="Chấn chỉnh việc ca hát trong bệnh viện" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/dan-sinh.htm"
+                                   title="Dân sinh">Dân sinh</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm"
+                                       title="Chấn chỉnh việc ca hát trong bệnh viện">Chấn chỉnh việc ca hát trong bệnh viện</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/chan-chinh-viec-ca-hat-trong-benh-vien-185240303180406943.htm"
+                                       data-id="185240301141705118"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/bac-si-phai-thuc-hanh-12-thang-tai-benh-vien-hanh-nghe-6-thang-tai-tram-y-te-185240301141705118.htm"
+                                       title="Bác sĩ phải thực hành 12 tháng tại bệnh viện, hành nghề 6 tháng tại trạm y tế">Bác sĩ phải thực hành 12 tháng tại bệnh viện, hành nghề 6 tháng tại trạm y tế</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240225201328521" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm" data-io-canonical-url="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm"
+                               title="Khi nào được khám chuyển tuyến để hưởng bảo hiểm y tế?">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/2/25/bao-hiem-y-te-1708866054344902946823-83-0-881-1276-crop-1708866064804837113806.jpg" alt="Khi nào được khám chuyển tuyến để hưởng bảo hiểm y tế?"
+                                     title="Khi nào được khám chuyển tuyến để hưởng bảo hiểm y tế?" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/quyen-duoc-biet.htm"
+                                   title="Quyền được biết">Quyền được biết</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm"
+                                       title="Khi nào được khám chuyển tuyến để hưởng bảo hiểm y tế?">Khi nào được khám chuyển tuyến để hưởng bảo hiểm y tế?</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/khi-nao-duoc-kham-chuyen-tuyen-de-huong-bao-hiem-y-te-185240225201328521.htm"
+                                       data-id="18524022008543765"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/nha-xay-khong-phep-ly-hon-chia-tai-san-the-nao-18524022008543765.htm"
+                                       title="Nhà xây không phép, ly hôn chia tài sản thế nào?">Nhà xây không phép, ly hôn chia tài sản thế nào?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240220172744393" data-rolling-news-id="0" data-newstype="2" data-type="13" href="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm" data-io-canonical-url="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm"
+                               title="Vì sao giới bác sĩ thực tập Hàn Quốc đình công?">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/2/20/avatar1708425602128-17084256042992119457759.jpeg" alt="Vì sao giới bác sĩ thực tập Hàn Quốc đình công?"
+                                     title="Vì sao giới bác sĩ thực tập Hàn Quốc đình công?" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/video/the-gioi.htm"
+                                   title="Thế giới">Thế giới</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm"
+                                       class="box-category-link-title" data-newstype="2" data-type="13"
+                                       href="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm"
+                                       title="Vì sao giới bác sĩ thực tập Hàn Quốc đình công?">Vì sao giới bác sĩ thực tập Hàn Quốc đình công?</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/vi-sao-gioi-bac-si-thuc-tap-han-quoc-dinh-cong-185240220172744393.htm"
+                                       data-id="185230406152702687"
+                                       class="box-category-related-link-title"
+                                       data-newstype="13"
+                                       href="/vi-sao-chau-au-rung-dong-vi-bieu-tinh-dinh-cong-185230406152702687.htm"
+                                       title="Vì sao châu Âu rúng động vì biểu tình, đình công?">Vì sao châu Âu rúng động vì biểu tình, đình công?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="18524020616382063" data-rolling-news-id="0" data-newstype="2" data-type="13" href="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm" data-io-canonical-url="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm"
+                               title="Bác sĩ Palestine trải qua cảnh bị Israel gông cùm, bịt mắt suốt 45 ngày">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/2/9/avatar1707463751357-1707463752409592709675.jpeg" alt="Bác sĩ Palestine trải qua cảnh bị Israel gông cùm, bịt mắt suốt 45 ngày"
+                                     title="Bác sĩ Palestine trải qua cảnh bị Israel gông cùm, bịt mắt suốt 45 ngày" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/video/the-gioi.htm"
+                                   title="Thế giới">Thế giới</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm"
+                                       class="box-category-link-title" data-newstype="2" data-type="13"
+                                       href="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm"
+                                       title="Bác sĩ Palestine trải qua cảnh bị Israel gông cùm, bịt mắt suốt 45 ngày">Bác sĩ Palestine trải qua cảnh bị Israel gông cùm, bịt mắt suốt 45 ngày</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/bac-si-palestine-trai-qua-canh-bi-israel-gong-cum-bit-mat-suot-45-ngay-18524020616382063.htm"
+                                       data-id="185240205163605908"
+                                       class="box-category-related-link-title"
+                                       data-newstype="13"
+                                       href="/israel-noi-nhieu-don-vi-hamas-bi-xoa-phien-hieu-185240205163605908.htm"
+                                       title="Israel nói nhiều đơn vị Hamas bị &#039;xóa sổ&#039;">Israel nói nhiều đơn vị Hamas bị &#039;xóa sổ&#039;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="18524020511455432" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/don-tet-0-dong-o-benh-vien-18524020511455432.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/don-tet-0-dong-o-benh-vien-18524020511455432.htm" data-io-canonical-url="/don-tet-0-dong-o-benh-vien-18524020511455432.htm"
+                               title="Đón tết &#039;0 đồng&#039; ở bệnh viện">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/2/5/phien-cho-3-1707107957548745418432-294-153-1681-2372-crop-17071080274131324532800.jpg" alt="Đón tết &#039;0 đồng&#039; ở bệnh viện"
+                                     title="Đón tết &#039;0 đồng&#039; ở bệnh viện" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/dan-sinh.htm"
+                                   title="Dân sinh">Dân sinh</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/don-tet-0-dong-o-benh-vien-18524020511455432.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/don-tet-0-dong-o-benh-vien-18524020511455432.htm"
+                                       title="Đón tết &#039;0 đồng&#039; ở bệnh viện">Đón tết &#039;0 đồng&#039; ở bệnh viện</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/don-tet-0-dong-o-benh-vien-18524020511455432.htm"
+                                       data-id="185240204111901426"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/tinh-hinh-dich-benh-tai-tphcm-nhung-ngay-giap-tet-nguyen-dan-2024-185240204111901426.htm"
+                                       title="Tình hình dịch bệnh tại TP.HCM những ngày giáp Tết Nguyên đán 2024">Tình hình dịch bệnh tại TP.HCM những ngày giáp Tết Nguyên đán 2024</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240201233716554" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm" data-io-canonical-url="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm"
+                               title="Nhiều bất cập trong kiểm tra, giám định BHYT tại TP.HCM">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/2/1/2-con-nhung-ton-tai-trong-giam-dinh-thanh-toan-chi-phi-kcb-bhytsong-son-17068052348151972615969-0-0-1600-2560-crop-1706805283748396066303.jpg" alt="Nhiều bất cập trong kiểm tra, giám định BHYT tại TP.HCM"
+                                     title="Nhiều bất cập trong kiểm tra, giám định BHYT tại TP.HCM" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su.htm"
+                                   title="Thời sự">Thời sự</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm"
+                                       title="Nhiều bất cập trong kiểm tra, giám định BHYT tại TP.HCM">Nhiều bất cập trong kiểm tra, giám định BHYT tại TP.HCM</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nhieu-bat-cap-trong-kiem-tra-giam-dinh-bhyt-tai-tphcm-185240201233716554.htm"
+                                       data-id="18524012619292434"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/mong-doi-bhyt-co-the-kham-o-bat-ky-tuyen-nao-18524012619292434.htm"
+                                       title="Mong đợi BHYT có thể khám ở bất kỳ tuyến nào">Mong đợi BHYT có thể khám ở bất kỳ tuyến nào</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-stream="2" data-id="185240201152701813" data-rolling-news-id="0" data-newstype="2" data-type="13" href="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm">
+                            <a class="box-category-link-with-avatar img-square" href="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm" data-io-canonical-url="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm"
+                               title="Bệnh nhân K xin được đón tết ở bệnh viện: Làm ơn đừng để mẹ một mình!" avatar="">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/thumb_w/328/528068263637045248/2024/2/1/ung-buoiu-17067758988311457806467-1-431-1080-1240-crop-1706775910784145828400.jpg"
+                                     alt="Bệnh nhân K xin được đón tết ở bệnh viện: Làm ơn đừng để mẹ một mình!" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <div class="box-content-top">
+                                    <a class="box-category-category" href="/video/suc-khoe.htm"
+                                       title="Sức khỏe">Sức khỏe</a>
+                                    <h2 class="box-title-text" data-trimline="3" data-vr-headline>
+                                        <a data-linktype="newsdetail" class="box-category-link-title" data-io-canonical-url="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm"
+                                           data-newstype="2" data-type="13" href="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm"
+                                           title="Bệnh nhân K xin được đón tết ở bệnh viện: Làm ơn đừng để mẹ một mình!">Bệnh nhân K xin được đón tết ở bệnh viện: Làm ơn đừng để mẹ một mình!</a>
+                                    </h2>
+                                    <a href="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm" title="Tết là dịp mà ai cũng mong muốn được trở về với gia đình. Thế nhưng, tết lại là nỗi lo của những bệnh nhân K vì sợ… không được ở lại bệnh viện, để đỡ nặng gánh cho con cháu. Nhiều bệnh nhân xin được đón tết tại bệnh viện. " data-type="sapo" class="box-category-sapo d-block"
+                                       data-trimline="4">Tết là dịp mà ai cũng mong muốn được trở về với gia đình. Thế nhưng, tết lại là nỗi lo của những bệnh nhân K vì sợ… không được ở lại bệnh viện, để đỡ nặng gánh cho con cháu. Nhiều bệnh nhân xin được đón tết tại bệnh viện. </a>
+                                </div>
+                                <div class="box-content-bot">
+                                    <p class="title-box">Xem thêm</p>
+                                    <div class="box-bot-item">
+                                        <a class="box-bot-link-with-avatar img-resize" data-io-canonical-url="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm"
+                                           href="/tphcm-chuan-bi-kich-ban-ung-pho-cac-tinh-huong-khan-cap-ve-covid-19-185240130130258233.htm"
+                                           title="TP.HCM chuẩn bị kịch bản ứng phó các tình huống khẩn cấp về Covid-19"
+                                           data-id="185240130130258233">
+                                            <img data-type="avatar"
+                                                 src="https://images2.thanhnien.vn/zoom/118_74/528068263637045248/2024/1/30/avatar1706600427474-17066004291081030442012.jpg"
+                                                 alt="TP.HCM chuẩn bị kịch bản ứng phó các tình huống khẩn cấp về Covid-19" class="box-category-avatar">
+                                        </a>
+                                        <div class="box-bot-content">
+                                            <h2 data-vr-headline>
+                                                <a data-linktype="newsdetail" data-trimline="3"
+                                                   data-id="185240130130258233"
+                                                   class="box-category-link-title"
+                                                   data-newstype="2" data-type="13" href="/benh-nhan-k-xin-duoc-don-tet-o-benh-vien-lam-on-dung-de-me-mot-minh-185240201152701813.htm"
+                                                   href="/tphcm-chuan-bi-kich-ban-ung-pho-cac-tinh-huong-khan-cap-ve-covid-19-185240130130258233.htm"
+                                                   title="TP.HCM chuẩn bị kịch bản ứng phó các tình huống khẩn cấp về Covid-19">TP.HCM chuẩn bị kịch bản ứng phó các tình huống khẩn cấp về Covid-19</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-stream="2" data-id="185240130134108625" data-rolling-news-id="0" data-newstype="1" data-type="29" href="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm">
+                            <a class="box-category-link-with-avatar img-square" href="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm" data-io-canonical-url="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm"
+                               title="Ở bệnh viện cũng có… mùa xuân" avatar="">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/thumb_w/328/528068263637045248/2024/1/31/z5119153063273e12ba5f5c3de954271591d8606566cff-17065951398751594648588-0-126-1707-1406-crop-1706681234992555667446.jpg"
+                                     alt="Ở bệnh viện cũng có… mùa xuân" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <div class="box-content-top">
+                                    <a class="box-category-category" href="/doi-song/nguoi-song-quanh-ta.htm"
+                                       title="Người sống quanh ta">Người sống quanh ta</a>
+                                    <h2 class="box-title-text" data-trimline="3" data-vr-headline>
+                                        <a data-linktype="newsdetail" class="box-category-link-title" data-io-canonical-url="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm"
+                                           data-newstype="1" data-type="29" href="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm"
+                                           title="Ở bệnh viện cũng có… mùa xuân">Ở bệnh viện cũng có… mùa xuân</a>
+                                    </h2>
+                                    <a href="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm" title="Ở khoa Mắt của Bệnh viện hữu nghị Việt Nam - Cuba Đồng Hới (Quảng Bình), các y bác sĩ đang cố gắng tạo nên không khí tết ấm cúng, giúp bệnh nhân vơi bớt cơn đau thể xác và nỗi nhớ nhà…" data-type="sapo" class="box-category-sapo d-block"
+                                       data-trimline="4">Ở khoa Mắt của Bệnh viện hữu nghị Việt Nam - Cuba Đồng Hới (Quảng Bình), các y bác sĩ đang cố gắng tạo nên không khí tết ấm cúng, giúp bệnh nhân vơi bớt cơn đau thể xác và nỗi nhớ nhà…</a>
+                                </div>
+                                <div class="box-content-bot">
+                                    <p class="title-box">Xem thêm</p>
+                                    <div class="box-bot-item">
+                                        <a class="box-bot-link-with-avatar img-resize" data-io-canonical-url="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm"
+                                           href="/pho-du-lich-an-thuong-khoac-ao-moi-ruc-ro-thu-hut-khach-den-check-in-185240128100124508.htm"
+                                           title="Phố du lịch An Thượng &#039;khoác áo mới&#039; rực rỡ, thu hút khách đến check-in"
+                                           data-id="185240128100124508">
+                                            <img data-type="avatar"
+                                                 src="https://images2.thanhnien.vn/zoom/118_74/528068263637045248/2024/1/28/4230052903935615898881974264983286819271484n-1706411141151832727687-0-53-1190-1957-crop-17064116702911711261319.jpg"
+                                                 alt="Phố du lịch An Thượng &#039;khoác áo mới&#039; rực rỡ, thu hút khách đến check-in" class="box-category-avatar">
+                                        </a>
+                                        <div class="box-bot-content">
+                                            <h2 data-vr-headline>
+                                                <a data-linktype="newsdetail" data-trimline="3"
+                                                   data-id="185240128100124508"
+                                                   class="box-category-link-title"
+                                                   data-newstype="1" data-type="29" href="/o-benh-vien-cung-co-mua-xuan-185240130134108625.htm"
+                                                   href="/pho-du-lich-an-thuong-khoac-ao-moi-ruc-ro-thu-hut-khach-den-check-in-185240128100124508.htm"
+                                                   title="Phố du lịch An Thượng &#039;khoác áo mới&#039; rực rỡ, thu hút khách đến check-in">Phố du lịch An Thượng &#039;khoác áo mới&#039; rực rỡ, thu hút khách đến check-in</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240131124319194" data-rolling-news-id="0" data-newstype="2" data-type="13" href="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm" data-io-canonical-url="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm"
+                               title="Xem biệt kích Israel giả phụ nữ, bác sĩ xông vào bệnh viện diệt tay súng Palestine">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/31/avatar1706694142730-17066941465191997619940.jpeg" alt="Xem biệt kích Israel giả phụ nữ, bác sĩ xông vào bệnh viện diệt tay súng Palestine"
+                                     title="Xem biệt kích Israel giả phụ nữ, bác sĩ xông vào bệnh viện diệt tay súng Palestine" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/video/the-gioi.htm"
+                                   title="Thế giới">Thế giới</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm"
+                                       class="box-category-link-title" data-newstype="2" data-type="13"
+                                       href="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm"
+                                       title="Xem biệt kích Israel giả phụ nữ, bác sĩ xông vào bệnh viện diệt tay súng Palestine">Xem biệt kích Israel giả phụ nữ, bác sĩ xông vào bệnh viện diệt tay súng Palestine</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/xem-biet-kich-israel-gia-phu-nu-bac-si-xong-vao-benh-vien-diet-tay-sung-palestine-185240131124319194.htm"
+                                       data-id="185240130154206801"
+                                       class="box-category-related-link-title"
+                                       data-newstype="13"
+                                       href="/my-dinh-kiem-che-israel-o-gaza-bang-cach-siet-cung-cap-vu-khi-185240130154206801.htm"
+                                       title="Mỹ định kiềm chế Israel ở Gaza bằng cách siết cung cấp vũ khí?">Mỹ định kiềm chế Israel ở Gaza bằng cách siết cung cấp vũ khí?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240130155945267" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm" data-io-canonical-url="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm"
+                               title="Mang &#039;tết ấm&#039; tới bệnh nhân nghèo">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/30/bhxh-tang-qua-tet-cho-benh-nhan-1706604968200840963595-0-0-600-960-crop-1706605065491269930693.jpg" alt="Mang &#039;tết ấm&#039; tới bệnh nhân nghèo"
+                                     title="Mang &#039;tết ấm&#039; tới bệnh nhân nghèo" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su.htm"
+                                   title="Thời sự">Thời sự</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm"
+                                       title="Mang &#039;tết ấm&#039; tới bệnh nhân nghèo">Mang &#039;tết ấm&#039; tới bệnh nhân nghèo</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/mang-tet-am-toi-benh-nhan-ngheo-185240130155945267.htm"
+                                       data-id="18524012800242024"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/tu-doan-trao-tang-qua-tet-cho-nguoi-lao-dong-o-binh-dinh-18524012800242024.htm"
+                                       title="T.Ư Đoàn trao tặng quà tết cho người lao động ở Bình Định">T.Ư Đoàn trao tặng quà tết cho người lao động ở Bình Định</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240119134026724" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm" data-io-canonical-url="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm"
+                               title="Quảng Bình: Phát hiện thi thể một phụ nữ trong khuôn viên bệnh viện">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/19/base64-17056484196941721466459-0-0-675-1080-crop-17056484403791758629814.jpeg" alt="Quảng Bình: Phát hiện thi thể một phụ nữ trong khuôn viên bệnh viện"
+                                     title="Quảng Bình: Phát hiện thi thể một phụ nữ trong khuôn viên bệnh viện" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su.htm"
+                                   title="Thời sự">Thời sự</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm"
+                                       title="Quảng Bình: Phát hiện thi thể một phụ nữ trong khuôn viên bệnh viện">Quảng Bình: Phát hiện thi thể một phụ nữ trong khuôn viên bệnh viện</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/quang-binh-phat-hien-thi-the-mot-phu-nu-trong-khuon-vien-benh-vien-185240119134026724.htm"
+                                       data-id="185240106103450493"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/quang-binh-phat-hien-thi-the-cua-nguoi-dang-chiu-an-tu-treo-185240106103450493.htm"
+                                       title="Quảng Bình: Phát hiện thi thể của người đang chịu án tù treo">Quảng Bình: Phát hiện thi thể của người đang chịu án tù treo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-stream="2" data-id="185240117192135556" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm">
+                            <a class="box-category-link-with-avatar img-square" href="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm" data-io-canonical-url="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm"
+                               title="Tổ chức đón tết cho người điều trị tại bệnh viện" avatar="">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/thumb_w/328/528068263637045248/2024/1/18/img3278-1705546765292461405532-0-319-428-640-crop-1705546820048322721872.jpg"
+                                     alt="Tổ chức đón tết cho người điều trị tại bệnh viện" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <div class="box-content-top">
+                                    <a class="box-category-category" href="/suc-khoe.htm"
+                                       title="Sức khỏe">Sức khỏe</a>
+                                    <h2 class="box-title-text" data-trimline="3" data-vr-headline>
+                                        <a data-linktype="newsdetail" class="box-category-link-title" data-io-canonical-url="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm"
+                                           data-newstype="0" data-type="0" href="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm"
+                                           title="Tổ chức đón tết cho người điều trị tại bệnh viện">Tổ chức đón tết cho người điều trị tại bệnh viện</a>
+                                    </h2>
+                                    <a href="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm" title="Bộ Y tế vừa có công văn gửi các sở y tế, giám đốc bệnh viện (BV) đề nghị tăng cường công tác cấp cứu, khám chữa bệnh (KCB) trong dịp tết sắp đến." data-type="sapo" class="box-category-sapo d-block"
+                                       data-trimline="4">Bộ Y tế vừa có công văn gửi các sở y tế, giám đốc bệnh viện (BV) đề nghị tăng cường công tác cấp cứu, khám chữa bệnh (KCB) trong dịp tết sắp đến.</a>
+                                </div>
+                                <div class="box-content-bot">
+                                    <p class="title-box">Xem thêm</p>
+                                    <div class="box-bot-item">
+                                        <a class="box-bot-link-with-avatar img-resize" data-io-canonical-url="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm"
+                                           href="/kham-benh-cap-thuoc-va-tang-qua-tet-cho-dong-bao-hre-o-quang-ngai-185240113162052441.htm"
+                                           title="Khám bệnh, cấp thuốc và tặng quà tết cho đồng bào Hrê ở Quảng Ngãi"
+                                           data-id="185240113162052441">
+                                            <img data-type="avatar"
+                                                 src="https://images2.thanhnien.vn/zoom/118_74/528068263637045248/2024/1/13/kham-benh-cap-thuoc-2-17051368665062056782223-0-0-1600-2560-crop-17051372026352100430492.jpg"
+                                                 alt="Khám bệnh, cấp thuốc và tặng quà tết cho đồng bào Hrê ở Quảng Ngãi" class="box-category-avatar">
+                                        </a>
+                                        <div class="box-bot-content">
+                                            <h2 data-vr-headline>
+                                                <a data-linktype="newsdetail" data-trimline="3"
+                                                   data-id="185240113162052441"
+                                                   class="box-category-link-title"
+                                                   data-newstype="0" data-type="0" href="/to-chuc-don-tet-cho-nguoi-dieu-tri-tai-benh-vien-185240117192135556.htm"
+                                                   href="/kham-benh-cap-thuoc-va-tang-qua-tet-cho-dong-bao-hre-o-quang-ngai-185240113162052441.htm"
+                                                   title="Khám bệnh, cấp thuốc và tặng quà tết cho đồng bào Hrê ở Quảng Ngãi">Khám bệnh, cấp thuốc và tặng quà tết cho đồng bào Hrê ở Quảng Ngãi</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240117185433852" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm" data-io-canonical-url="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm"
+                               title="Để người bệnh hài lòng hơn khi đến khám chữa bệnh">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/17/anh-1-1705492339154646202705-0-0-400-640-crop-17054923574921437294340.jpg" alt="Để người bệnh hài lòng hơn khi đến khám chữa bệnh"
+                                     title="Để người bệnh hài lòng hơn khi đến khám chữa bệnh" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su.htm"
+                                   title="Thời sự">Thời sự</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm"
+                                       title="Để người bệnh hài lòng hơn khi đến khám chữa bệnh">Để người bệnh hài lòng hơn khi đến khám chữa bệnh</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/de-nguoi-benh-hai-long-hon-khi-den-kham-chua-benh-185240117185433852.htm"
+                                       data-id="185240105131316285"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/xu-ly-kham-chua-benh-chui-tranh-de-nguoi-dan-tien-mat-tat-mang-185240105131316285.htm"
+                                       title="Xử lý khám chữa bệnh &#039;chui&#039;, tránh để người dân &#039;tiền mất tật mang&#039;">Xử lý khám chữa bệnh &#039;chui&#039;, tránh để người dân &#039;tiền mất tật mang&#039;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240117062635786" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm" data-io-canonical-url="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm"
+                               title="TP.HCM: Ý kiến không hài lòng của người bệnh giúp bệnh viện cải tiến chất lượng">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/16/img2024011705493559417120245-17054480036721849611506-70-0-603-853-crop-17054480761511461667764.png" alt="TP.HCM: Ý kiến không hài lòng của người bệnh giúp bệnh viện cải tiến chất lượng"
+                                     title="TP.HCM: Ý kiến không hài lòng của người bệnh giúp bệnh viện cải tiến chất lượng" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/suc-khoe.htm"
+                                   title="Sức khỏe">Sức khỏe</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm"
+                                       title="TP.HCM: Ý kiến không hài lòng của người bệnh giúp bệnh viện cải tiến chất lượng">TP.HCM: Ý kiến không hài lòng của người bệnh giúp bệnh viện cải tiến chất lượng</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/tphcm-y-kien-khong-hai-long-cua-nguoi-benh-giup-benh-vien-cai-tien-chat-luong-185240117062635786.htm"
+                                       data-id="1851528523"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/bo-y-te-khao-sat-su-hai-long-cua-nguoi-benh-nhan-vien-y-te-1851528523.htm"
+                                       title="Bộ Y tế khảo sát sự hài lòng của người bệnh, nhân viên y tế">Bộ Y tế khảo sát sự hài lòng của người bệnh, nhân viên y tế</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240114224817114" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm" data-io-canonical-url="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm"
+                               title="Những đường hầm đặc biệt chuyển bệnh">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/14/anh-1-17052469885341906763478-22-0-1622-2560-crop-17052470140442014487263.jpg" alt="Những đường hầm đặc biệt chuyển bệnh"
+                                     title="Những đường hầm đặc biệt chuyển bệnh" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/dan-sinh.htm"
+                                   title="Dân sinh">Dân sinh</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm"
+                                       title="Những đường hầm đặc biệt chuyển bệnh">Những đường hầm đặc biệt chuyển bệnh</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nhung-duong-ham-dac-biet-chuyen-benh-185240114224817114.htm"
+                                       data-id="185230822195534191"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/noi-lo-chuyen-benh-nhan-bang-xe-cap-cuu-185230822195534191.htm"
+                                       title="Nỗi lo chuyển bệnh nhân bằng xe cấp cứu">Nỗi lo chuyển bệnh nhân bằng xe cấp cứu</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185240109234152166" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm" data-io-canonical-url="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm"
+                               title="Thời gian bác sĩ thực hành bệnh viện gắn với trạm y tế chỉ còn 12 tháng">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2024/1/9/bac-si-1704818398401444056043-0-0-1600-2560-crop-17048184384321638534190.jpg" alt="Thời gian bác sĩ thực hành bệnh viện gắn với trạm y tế chỉ còn 12 tháng"
+                                     title="Thời gian bác sĩ thực hành bệnh viện gắn với trạm y tế chỉ còn 12 tháng" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/dan-sinh.htm"
+                                   title="Dân sinh">Dân sinh</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm"
+                                       title="Thời gian bác sĩ thực hành bệnh viện gắn với trạm y tế chỉ còn 12 tháng">Thời gian bác sĩ thực hành bệnh viện gắn với trạm y tế chỉ còn 12 tháng</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/thoi-gian-bac-si-thuc-hanh-benh-vien-gan-voi-tram-y-te-chi-con-12-thang-185240109234152166.htm"
+                                       data-id="185240105185225546"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/chi-can-quyet-tam-tphcm-se-co-bac-si-gia-dinh-nhu-cuba-sau-vai-nam-185240105185225546.htm"
+                                       title="Chỉ cần quyết tâm, TP.HCM sẽ có bác sĩ gia đình như Cuba sau vài năm">Chỉ cần quyết tâm, TP.HCM sẽ có bác sĩ gia đình như Cuba sau vài năm</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-stream="2" data-id="185231219183530462" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm">
+                            <a class="box-category-link-with-avatar img-square" href="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm" data-io-canonical-url="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm"
+                               title="Vào bệnh viện ở TP.HCM hỏi thăm, gia đình vỡ òa tìm được người cha biệt tích" avatar="">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/thumb_w/328/528068263637045248/2023/12/19/edit-anh-man-hinh-2023-12-18-luc-13-51-16-170298557787453410219-131-0-1082-713-crop-1702985634199304260821.png"
+                                     alt="Vào bệnh viện ở TP.HCM hỏi thăm, gia đình vỡ òa tìm được người cha biệt tích" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <div class="box-content-top">
+                                    <a class="box-category-category" href="/doi-song.htm"
+                                       title="Đời sống">Đời sống</a>
+                                    <h2 class="box-title-text" data-trimline="3" data-vr-headline>
+                                        <a data-linktype="newsdetail" class="box-category-link-title" data-io-canonical-url="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm"
+                                           data-newstype="0" data-type="0" href="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm"
+                                           title="Vào bệnh viện ở TP.HCM hỏi thăm, gia đình vỡ òa tìm được người cha biệt tích">Vào bệnh viện ở TP.HCM hỏi thăm, gia đình vỡ òa tìm được người cha biệt tích</a>
+                                    </h2>
+                                    <a href="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm" title="Ông T.C.N (61 tuổi, ngụ TP.HCM) bị tai biến bỗng dưng đạp xe rời khỏi nhà rồi sau đó không rõ tung tích, vừa được gia đình tìm thấy khi đang được chăm sóc tại một bệnh viện ở TP.HCM." data-type="sapo" class="box-category-sapo d-block"
+                                       data-trimline="4">Ông T.C.N (61 tuổi, ngụ TP.HCM) bị tai biến bỗng dưng đạp xe rời khỏi nhà rồi sau đó không rõ tung tích, vừa được gia đình tìm thấy khi đang được chăm sóc tại một bệnh viện ở TP.HCM.</a>
+                                </div>
+                                <div class="box-content-bot">
+                                    <p class="title-box">Xem thêm</p>
+                                    <div class="box-bot-item">
+                                        <a class="box-bot-link-with-avatar img-resize" data-io-canonical-url="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm"
+                                           href="/cha-bi-tai-bien-dap-xe-roi-nha-roi-biet-tam-cac-con-cau-cuu-185231218135635278.htm"
+                                           title="Cha bị tai biến đạp xe rời nhà rồi biệt tăm, các con &#039;cầu cứu&#039;"
+                                           data-id="185231218135635278">
+                                            <img data-type="avatar"
+                                                 src="https://images2.thanhnien.vn/zoom/118_74/528068263637045248/2023/12/18/anh-man-hinh-2023-12-18-luc-13-51-16-17028823662171640751120-57-0-976-1470-crop-17028823780821209167581.png"
+                                                 alt="Cha bị tai biến đạp xe rời nhà rồi biệt tăm, các con &#039;cầu cứu&#039;" class="box-category-avatar">
+                                        </a>
+                                        <div class="box-bot-content">
+                                            <h2 data-vr-headline>
+                                                <a data-linktype="newsdetail" data-trimline="3"
+                                                   data-id="185231218135635278"
+                                                   class="box-category-link-title"
+                                                   data-newstype="0" data-type="0" href="/vao-benh-vien-o-tphcm-hoi-tham-gia-dinh-vo-oa-tim-duoc-nguoi-cha-biet-tich-185231219183530462.htm"
+                                                   href="/cha-bi-tai-bien-dap-xe-roi-nha-roi-biet-tam-cac-con-cau-cuu-185231218135635278.htm"
+                                                   title="Cha bị tai biến đạp xe rời nhà rồi biệt tăm, các con &#039;cầu cứu&#039;">Cha bị tai biến đạp xe rời nhà rồi biệt tăm, các con &#039;cầu cứu&#039;</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-id="185231219063243776" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm">
+                            <a class="box-category-link-with-avatar img-resize" href="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm" data-io-canonical-url="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm"
+                               title="Ngành y tế TP.HCM đã làm được gì trong 10 năm qua?">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/12/18/bbd1-170294205650222958089-0-0-552-883-crop-170294219290674852194.png" alt="Ngành y tế TP.HCM đã làm được gì trong 10 năm qua?"
+                                     title="Ngành y tế TP.HCM đã làm được gì trong 10 năm qua?" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <a class="box-category-category" href="/thoi-su/dan-sinh.htm"
+                                   title="Dân sinh">Dân sinh</a>
+                                <h2 class="box-title-text" data-vr-headline>
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm"
+                                       class="box-category-link-title" data-newstype="0" data-type="0"
+                                       href="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm"
+                                       title="Ngành y tế TP.HCM đã làm được gì trong 10 năm qua?">Ngành y tế TP.HCM đã làm được gì trong 10 năm qua?</a>
+                                </h2>
+                                <div class="item-related">
+                                    <a data-type="1" data-live-status="1" data-linktype="newsdetail" data-io-canonical-url="/nganh-y-te-tphcm-da-lam-duoc-gi-trong-10-nam-qua-185231219063243776.htm"
+                                       data-id="185231214182940151"
+                                       class="box-category-related-link-title"
+                                       data-newstype="0"
+                                       href="/tphcm-muon-cong-bo-het-dich-benh-covid-19-185231214182940151.htm"
+                                       title="TP.HCM muốn công bố hết dịch bệnh Covid-19">TP.HCM muốn công bố hết dịch bệnh Covid-19</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-category-item" data-stream="2" data-id="18523121817503961" data-rolling-news-id="0" data-newstype="0" data-type="0" href="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm">
+                            <a class="box-category-link-with-avatar img-square" href="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm" data-io-canonical-url="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm"
+                               title="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Người mẹ sức khỏe đã ổn định" avatar="">
+                                <img data-type="avatar" src="https://images2.thanhnien.vn/thumb_w/328/528068263637045248/2023/12/18/me-cua-nu-sinh-bom-hang-1702896390739257868432-1-519-1334-1519-crop-170289657860030030044.jpg"
+                                     alt="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Người mẹ sức khỏe đã ổn định" class="box-category-avatar" loading="lazy">
+                            </a>
+                            <div class="box-category-content">
+                                <div class="box-content-top">
+                                    <a class="box-category-category" href="/doi-song/nguoi-song-quanh-ta.htm"
+                                       title="Người sống quanh ta">Người sống quanh ta</a>
+                                    <h2 class="box-title-text" data-trimline="3" data-vr-headline>
+                                        <a data-linktype="newsdetail" class="box-category-link-title" data-io-canonical-url="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm"
+                                           data-newstype="0" data-type="0" href="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm"
+                                           title="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Người mẹ sức khỏe đã ổn định">Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Người mẹ sức khỏe đã ổn định</a>
+                                    </h2>
+                                    <a href="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm" title="Ngày 18.12, Bệnh viện Bình Định cho biết sức khỏe của mẹ nữ sinh Phan Thị Ca đã dần ổn định và có thể xuất viện trong vài ngày tới." data-type="sapo" class="box-category-sapo d-block"
+                                       data-trimline="4">Ngày 18.12, Bệnh viện Bình Định cho biết sức khỏe của mẹ nữ sinh Phan Thị Ca đã dần ổn định và có thể xuất viện trong vài ngày tới.</a>
+                                </div>
+                                <div class="box-content-bot">
+                                    <p class="title-box">Xem thêm</p>
+                                    <div class="box-bot-item">
+                                        <a class="box-bot-link-with-avatar img-resize" data-io-canonical-url="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm"
+                                           href="/vu-nu-sinh-bom-hang-o-binh-dinh-benh-vien-tiep-nhan-dieu-tri-cho-nguoi-me-185231213133720662.htm"
+                                           title="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Bệnh viện tiếp nhận điều trị cho người mẹ"
+                                           data-id="185231213133720662">
+                                            <img data-type="avatar"
+                                                 src="https://images2.thanhnien.vn/zoom/118_74/528068263637045248/2023/12/13/vu-bom-hang-17022021609671839250985-137-0-913-1242-crop-1702449055567978538963.jpg"
+                                                 alt="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Bệnh viện tiếp nhận điều trị cho người mẹ" class="box-category-avatar">
+                                        </a>
+                                        <div class="box-bot-content">
+                                            <h2 data-vr-headline>
+                                                <a data-linktype="newsdetail" data-trimline="3"
+                                                   data-id="185231213133720662"
+                                                   class="box-category-link-title"
+                                                   data-newstype="0" data-type="0" href="/vu-nu-sinh-bom-hang-o-binh-dinh-nguoi-me-suc-khoe-da-on-dinh-18523121817503961.htm"
+                                                   href="/vu-nu-sinh-bom-hang-o-binh-dinh-benh-vien-tiep-nhan-dieu-tri-cho-nguoi-me-185231213133720662.htm"
+                                                   title="Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Bệnh viện tiếp nhận điều trị cho người mẹ">Vụ nữ sinh &#039;bom hàng&#039; ở Bình Định: Bệnh viện tiếp nhận điều trị cho người mẹ</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
